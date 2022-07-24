@@ -70,6 +70,7 @@
   "actives": [
     {
       "id":1,
+      "company": "Embraer",
       "name": "EMBR3",
       "value": "112.00",
       "ref": "R$",
@@ -77,17 +78,43 @@
     },
     {
       "id":2,
+      "company": "Petrobras",
       "name": "PETR4",
       "value": "20.00",
       "ref": "R$",
       "amount": 400000
     },
     {
-      "id":1,
+      "id":3,
+      "company": "Vale",
       "name": "VALE3",
       "value": "85.00",
       "ref": "R$",
       "amount": 600000
+    },
+    {
+      "id":4,
+      "company": "Ambev",
+      "name": "ABEV3",
+      "value": "95.00",
+      "ref": "R$",
+      "amount": 235000
+    },
+    {
+      "id":5,
+      "company": "Localiza",
+      "name": "RENT3",
+      "value": "120.00",
+      "ref": "R$",
+      "amount": 80000
+    },
+    {
+      "id":6,
+      "company": "Assaí",
+      "name": "ASAI3",
+      "value": "40.00",
+      "ref": "R$",
+      "amount": 250000
     }
   ]
 }

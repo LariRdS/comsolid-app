@@ -15,8 +15,8 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  const handleClick = async (event) => {
-    event.preventDefault();
+  const handleClick = async (e) => {
+    e.preventDefault();
     try {
       const login = await loginService.login(email, password);
       if (login) {

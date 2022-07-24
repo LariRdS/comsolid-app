@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 import groupEmails from './illustrations/groupEmails.svg';
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [valid, setValid] = useState(false);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    Swal.fire(
+      'Feito!',
+      'Instruções foram enviadas para o endereço de email cadastrado!',
+      'success',
+    );
+  };
 
   useEffect(() => {
     const regEx = /^[\w.-]+@[\w.-]+\.[\w]+(\.[\w]+)?$/i;
@@ -28,11 +38,12 @@ export default function ForgotPassword() {
         <button
           type="submit"
           disabled={!valid}
-          /* onClick={handleClick} */
+          onClick={handleClick}
         >
           Enviar
         </button>
       </form>
+      <p>Aguarde 30 segundos em caso de reenvio</p>
     </>
   );
 }

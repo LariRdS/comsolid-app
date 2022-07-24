@@ -5,12 +5,15 @@ import context from './context';
 export default function Provider({ children }) {
   const [user, setUser] = useState();
   const [auth, setAuth] = useState(false);
+  const [activesData, setActivesData] = useState();
 
   const values = useMemo(() => ({
     user,
     setUser,
     auth,
     setAuth,
+    activesData,
+    setActivesData,
   }), []);
 
   return (
