@@ -23,7 +23,7 @@ export default function Login() {
         setUser(email);
         setLocalStorage('token', { email });
         setAuth(true);
-        navigate('/home');
+        navigate('/auth/home');
       }
     } catch (error) {
       Swal.fire({

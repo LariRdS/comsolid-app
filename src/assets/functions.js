@@ -3,7 +3,7 @@ export const setLocalStorage = (key, value) => {
 };
 
 export const getLocalStorage = (key) => {
-  const value = localStorage[key];
+  const value = localStorage.getItem(key);
   if (value) {
     return JSON.parse(value);
   }
