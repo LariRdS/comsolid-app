@@ -1,0 +1,93 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Maria",
+      "lastname": "Pimentel",
+      "email": "maria-p@gmail.com",
+      "password":"123456",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "João",
+      "lastname": "Rocha",
+      "email": "joao16@gmail.com",
+      "password": "123456",
+      "isActive": false
+    }
+  ],
+  "wallets": [
+    {
+      "id": 1,
+      "userId": 1,
+      "value": 12000.37,
+      "shares": {
+        "PETR4": 200,
+        "VALE3": 120,
+        "EMBR3": 500
+      }
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "value": 55000.00,
+      "shares": {
+        "PETR4": 400,
+        "EMBR3": 100
+      }
+    }
+  ],
+  "trades": [
+    {
+      "userId": 1,
+      "walletId": 1,
+      "buy": null,
+      "sell": {
+        "PETR4": 20
+      },
+      "datetime": "2022-07-18 22:01:32"
+    },
+    {
+      "userId": 1,
+      "walletId": 1,
+      "buy": null,
+      "sell": {
+        "PETR4": 50
+      },
+      "datetime": "2022-07-18 20:01:32"
+    },
+    {
+      "userId": 2,
+      "walletId": 2,
+      "buy": {
+        "EMBR3": 100
+      },
+      "sell": null,
+      "datetime": "2022-07-18 20:01:32"
+    }
+  ],
+  "actives": [
+    {
+      "id":1,
+      "name": "EMBR3",
+      "value": "112.00",
+      "ref": "R$",
+      "amount": 300000
+    },
+    {
+      "id":2,
+      "name": "PETR4",
+      "value": "20.00",
+      "ref": "R$",
+      "amount": 400000
+    },
+    {
+      "id":1,
+      "name": "VALE3",
+      "value": "85.00",
+      "ref": "R$",
+      "amount": 600000
+    }
+  ]
+}

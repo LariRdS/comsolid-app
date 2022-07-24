@@ -1,23 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import context from '../context/context';
 import { setLocalStorage } from '../assets/functions';
+import loginService from '../services/login.service';
 import logoVerde from './comsolid-logo/logoverde.png';
 
 export default function Login() {
+  const { setUser, setAuth } = useContext(context);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [valid, setValid] = useState(false);
+
   const navigate = useNavigate();
-  const handleClick = () => {
-    setLocalStorage('user', { email });
-    navigate('/home');
+
+  const handleClick = async (event) => {
+    event.preventDefault();
+    try {
+      const login = await loginService.login(email, password);
+      if (login) {
+        setUser(email);
+        setLocalStorage('token', { email });
+        setAuth(true);
+        navigate('/home');
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Usuário ou senha incorretos!',
+      });
+      throw new Error('Usuário ou senha incorretos');
+    }
   };
 
   useEffect(() => {
     const regEx = /^[\w.-]+@[\w.-]+\.[\w]+(\.[\w]+)?$/i;
     const checkEmail = regEx.test(email);
     const numberMin = 6;
-    const checkPassword = password.length > numberMin;
+    const checkPassword = password.length >= numberMin;
     setValid(checkEmail === true && checkPassword === true);
   }, [email, password]);
 
